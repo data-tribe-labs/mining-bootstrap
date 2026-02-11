@@ -1,0 +1,68 @@
+bundle:
+  name: mining_bootstrap_pipeline
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: Target catalog name
+    default: praju_dev
+
+  schema_landing:
+    description: landing schema name
+    default: landing
+  
+  # Use "bronze" / "silver" so one pipeline can publish to both (SQL uses these literal names).
+  schema_bronze:
+    description: Bronze schema name
+    default: bronze
+  
+  schema_silver:
+    description: Silver schema name
+    default: silver
+
+  schema_gold:
+    description: Silver schema name
+    default: gold_dev
+
+  volume:
+    description: Volume name for source data
+    default: mining_sample
+
+  production_full_path:
+    description: Production full path
+
+  equipment_maintenance_full_path:
+    description: Equipment maintenance full path
+
+  mine_site_full_path:
+    description: Mine site full path
+  
+
+targets:
+  # Development environment
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://e2-demo-field-eng.cloud.databricks.com # change this to your workspace host
+    
+    variables:
+      catalog: praju_dev # replace this with your catalog name
+      volume: mining_sample
+      production_full_path: '/Volumes/${var.catalog}/${var.schema_landing}/${var.volume}/production'
+      equipment_maintenance_full_path: '/Volumes/${var.catalog}/${var.schema_landing}/${var.volume}/equipment_maintenance'
+      mine_site_full_path: '/Volumes/${var.catalog}/${var.schema_landing}/${var.volume}/mine_sites'
+  
+# Ignore this for now. It's for production environment.
+  prod:
+    mode: production
+    workspace:
+      host: https://e2-demo-field-eng.cloud.databricks.com # change this to your workspace host
+    
+    variables:
+      catalog: praju_prod # replace this with your catalog name
+    
+    run_as:
+      user_name: testuser@databricks.com # replace this with your own email

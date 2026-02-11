@@ -1,0 +1,26 @@
+# Job: runs a Python file to set up base datasets (serverless compute).
+# Override parameters at run time via "Run now with different parameters" or CLI --job-parameters.
+resources:
+  jobs:
+    setup_base_datasets:
+      name: "[${bundle.target}] Setup Base Datasets"
+      description: "Runs setup.py to create or refresh base (sample) datasets. Parameters are passed as command-line arguments to the script."
+      # Serverless: omit job_clusters and job_cluster_key so the task uses serverless compute by default.
+      environments:
+        - environment_key: setup_env
+          spec:
+            environment_version: "1"
+      tasks:
+        - task_key: setup_datasets_task
+          environment_key: setup_env
+          spark_python_task:
+            python_file: ../scripts/setup.py
+            # Order matters. 
+            # First argument is catalog, second is schema, third is volume.
+            parameters:
+              - "${var.catalog}"
+              - "${var.schema_landing}"
+              - "${var.volume}"
+      tags:
+        project: "mining_bootstrap"
+        environment: "${bundle.target}"

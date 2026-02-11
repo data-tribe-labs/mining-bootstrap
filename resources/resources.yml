@@ -1,0 +1,54 @@
+
+# Mining Bootstrap DLT Pipeline Definition
+resources:
+  pipelines:
+    mining_bootstrap:
+      name: "[${bundle.target}] Mining Bootstrap Pipeline"
+
+      # Target catalog and default schema (bronze). 
+      catalog: ${var.catalog}
+      schema: ${var.schema_bronze}
+      
+      # Pipeline libraries - reference your SQL files
+      libraries:
+        - file:
+            path: ../bronze_ingest/bronze_ingest.sql
+        - file:
+            path: ../silver_transformations/mine_sites.sql
+        - file:
+            path: ../silver_transformations/silver_equipment_maintenance.sql
+        - file:
+            path: ../silver_transformations/silver_production.sql
+        - file:
+            path: ../gold_transformations/gold_production_by_site.sql
+        - file:
+            path: ../gold_transformations/gold_equipment_health.sql
+        - file:
+            path: ../gold_transformations/gold_executive_summary.sql
+      
+      # Use serverless compute
+      serverless: true
+      
+      # Pipeline configuration variables
+      configuration:
+        mine_site_full_path: "/Volumes/${var.catalog}/${var.schema_landing}/${var.volume}/mine_sites"
+        equipment_maintenance_full_path: "/Volumes/${var.catalog}/${var.schema_landing}/${var.volume}/equipment_maintenance"
+        daily_production_full_path: "/Volumes/${var.catalog}/${var.schema_landing}/${var.volume}/production"
+
+      
+      # Triggered mode
+      continuous: false
+      
+      # Use current channel
+      channel: CURRENT
+      
+      # Email notifications
+      notifications:
+        - email_recipients:
+            - testuser@databricks.com # replace this with your own email
+          alerts:
+            - on-update-failure
+      
+      tags:
+        project: "mining_bootstrap"
+        environment: "${bundle.target}"
