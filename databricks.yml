@@ -47,9 +47,22 @@ targets:
     default: true
     workspace:
       host: https://e2-demo-field-eng.cloud.databricks.com # change this to your workspace host
-    
+
     variables:
       catalog: praju_dev # replace this with your catalog name
+      volume: mining_sample
+      production_full_path: '/Volumes/${var.catalog}/${var.schema_landing}/${var.volume}/production'
+      equipment_maintenance_full_path: '/Volumes/${var.catalog}/${var.schema_landing}/${var.volume}/equipment_maintenance'
+      mine_site_full_path: '/Volumes/${var.catalog}/${var.schema_landing}/${var.volume}/mine_sites'
+
+  # Serverless workspace (deploy with: databricks bundle deploy -t serverless --profile serverless)
+  serverless:
+    mode: development
+    workspace:
+      host: https://dbc-a5187de1-ff31.cloud.databricks.com
+
+    variables:
+      catalog: praju_workspace
       volume: mining_sample
       production_full_path: '/Volumes/${var.catalog}/${var.schema_landing}/${var.volume}/production'
       equipment_maintenance_full_path: '/Volumes/${var.catalog}/${var.schema_landing}/${var.volume}/equipment_maintenance'
