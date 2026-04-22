@@ -75,9 +75,10 @@
 # MAGIC   - Files moved between subfolders, renamed, etc. — paths are tracked, not inode-level state
 # MAGIC
 # MAGIC **8. Streaming or batch — same code**
-# MAGIC   - `trigger(availableNow=True)` (what we use below) = "catch up and stop, like a
-# MAGIC     batch job"
-# MAGIC   - `trigger(processingTime='1 minute')` = "run continuously"
+# MAGIC
+# MAGIC   - trigger(availableNow=True) — "catch up and stop". When the cell runs, Auto Loader picks up every file the checkpoint hasn't seen yet, processes them, then exits. The cluster can be torn down. Feels identical to a nightly batch job. This is what Module 2 uses, because a workshop attendee running a cell expects "run → finish". You then schedule this in a Workflow to run hourly/daily and it behaves like a classic batch pipeline.
+# MAGIC   - trigger(processingTime='1 minute') — "stay running forever". The stream loops every minute: check for new files, process them, sleep, repeat. The cluster stays up. Use this when downstream consumers need fresh data within a minute or two.
+# MAGIC   - trigger(continuous='1 second') — sub-second latency. Experimental, rarely what you want.
 # MAGIC
 # MAGIC ### Under the hood (for the curious)
 # MAGIC
