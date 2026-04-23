@@ -17,14 +17,14 @@
 # COMMAND ----------
 
 # EDIT THIS — point to your own catalog
-CATALOG = "worley_firstname_lastname"
+CATALOG = "workshop_firstname_lastname"
 
 SCHEMA_BRONZE = "bronze"
 SCHEMA_SILVER = "silver"
 SCHEMA_GOLD   = "gold"
 
 # Pick a neighbour to share a table with (any other attendee's email)
-NEIGHBOUR_EMAIL = "neighbour@worley.com"
+NEIGHBOUR_EMAIL = "neighbour@example.com"
 
 # COMMAND ----------
 

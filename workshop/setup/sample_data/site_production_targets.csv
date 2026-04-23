@@ -1,0 +1,51 @@
+site_id,site_name,monthly_target_tons
+1,Copper Ridge Mine,800000
+2,Silver Valley Mine,550000
+3,Iron Mountain Mine,1700000
+4,Gold Creek Mine,100000
+5,Coal Basin Mine,2100000
+6,Platinum Peak Mine,420000
+7,Zinc Valley Mine,1250000
+8,Nickel Ridge Mine,1500000
+9,Bauxite Hills Mine,3100000
+10,Diamond Point Mine,70000
+11,Lithium Springs Mine,620000
+12,Cobalt Creek Mine,340000
+13,Rare Earth Valley,480000
+14,Tungsten Ridge Mine,310000
+15,Manganese Basin,2400000
+16,Chromite Mountain,1950000
+17,Phosphate Valley,3450000
+18,Potash Plains Mine,1380000
+19,Uranium Ridge Mine,560000
+20,Graphite Creek Mine,1050000
+21,Emerald Valley Mine,85000
+22,Tin Mountain Mine,1120000
+23,Lead Ridge Mine,970000
+24,Molybdenum Peak,1450000
+25,Titanium Sands Mine,2600000
+26,Vanadium Valley,1320000
+27,Antimony Creek Mine,670000
+28,Beryllium Ridge,270000
+29,Bismuth Basin,290000
+30,Cadmium Valley Mine,770000
+31,Selenium Springs,240000
+32,Tellurium Peak,340000
+33,Indium Ridge Mine,360000
+34,Gallium Creek,420000
+35,Germanium Valley,390000
+36,Copper Canyon II,940000
+37,Silver Peak II,590000
+38,Iron Hills II,1850000
+39,Gold Rush Mine,115000
+40,Coal Valley II,2200000
+41,Platinum Ridge II,450000
+42,Zinc Mountain II,1220000
+43,Nickel Basin II,1620000
+44,Bauxite Ridge II,3250000
+45,Diamond Creek II,75000
+46,Lithium Lake Mine,680000
+47,Cobalt Ridge II,370000
+48,Rare Earth Peak II,510000
+49,Tungsten Valley II,325000
+50,Manganese Ridge II,2500000

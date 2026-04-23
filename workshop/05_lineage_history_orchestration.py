@@ -17,7 +17,7 @@
 # COMMAND ----------
 
 # EDIT THIS — point to your own catalog
-CATALOG = "worley_firstname_lastname"
+CATALOG = "workshop_firstname_lastname"
 
 SCHEMA_GOLD = "gold"
 
@@ -77,7 +77,7 @@ display(spark.sql(f"""
 # MAGIC Walk through creating a Job in the UI that runs bronze → silver → gold in sequence:
 # MAGIC
 # MAGIC 1. Left sidebar → **Workflows** → **Create job**
-# MAGIC 2. Name it `worley_<yourname>_pipeline`
+# MAGIC 2. Name it `workshop_<yourname>_pipeline`
 # MAGIC 3. **Task 1:** name `bronze`, type **Notebook**, pick `workshop/02_bronze_ingest`, serverless compute
 # MAGIC 4. **Task 2:** name `silver`, type **Notebook**, pick `workshop/03_silver_transforms`, depends on `bronze`
 # MAGIC 5. **Task 3:** name `gold`, type **Notebook**, pick `workshop/04_gold_and_masks`, depends on `silver`
@@ -108,7 +108,7 @@ display(spark.sql(f"""
 # MAGIC %md
 # MAGIC ```json
 # MAGIC {
-# MAGIC   "name": "worley_<yourname>_pipeline",
+# MAGIC   "name": "workshop_<yourname>_pipeline",
 # MAGIC   "tasks": [
 # MAGIC     {
 # MAGIC       "task_key": "bronze",

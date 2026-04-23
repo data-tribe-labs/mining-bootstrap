@@ -20,11 +20,11 @@
 
 # COMMAND ----------
 
-PREFIX = "worley"
+PREFIX = "workshop"
 
 ATTENDEES = [
-    # {"first_name": "Peter",  "last_name": "Parker", "email": "peter.parker@worley.com"},
-    # {"first_name": "Jane",   "last_name": "Doe",    "email": "jane.doe@worley.com"},
+    # {"first_name": "Peter",  "last_name": "Parker", "email": "peter.parker@example.com"},
+    # {"first_name": "Jane",   "last_name": "Doe",    "email": "jane.doe@example.com"},
     # ... up to 10 rows
 ]
 
@@ -36,7 +36,7 @@ assert ATTENDEES, "Fill in the ATTENDEES list before running the rest of the not
 # MAGIC ## 2. Derive sanitized catalog names
 # MAGIC
 # MAGIC `{prefix}_{first_name}_{last_name}` lowercased with non-alphanumerics collapsed
-# MAGIC to `_`. Example: `"John O'Brien"` → `worley_john_o_brien`.
+# MAGIC to `_`. Example: `"John O'Brien"` → `workshop_john_o_brien`.
 
 # COMMAND ----------
 

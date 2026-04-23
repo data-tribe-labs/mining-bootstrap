@@ -14,11 +14,11 @@
 
 # COMMAND ----------
 
-PREFIX = "worley"
+PREFIX = "workshop"
 
 ATTENDEES = [
-    # {"first_name": "Peter",  "last_name": "Parker", "email": "peter.parker@worley.com"},
-    # {"first_name": "Jane",   "last_name": "Doe",    "email": "jane.doe@worley.com"},
+    # {"first_name": "Peter",  "last_name": "Parker", "email": "peter.parker@example.com"},
+    # {"first_name": "Jane",   "last_name": "Doe",    "email": "jane.doe@example.com"},
     # ... up to 10 rows
 ]
 

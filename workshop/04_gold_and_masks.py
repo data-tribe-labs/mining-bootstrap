@@ -21,7 +21,7 @@
 # COMMAND ----------
 
 # EDIT THIS — point to your own catalog
-CATALOG = "worley_firstname_lastname"
+CATALOG = "workshop_firstname_lastname"
 
 SCHEMA_SILVER = "silver"
 SCHEMA_GOLD   = "gold"

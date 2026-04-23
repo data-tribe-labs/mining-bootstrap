@@ -18,7 +18,7 @@
 # COMMAND ----------
 
 # EDIT THIS — point to your own catalog
-CATALOG = "worley_firstname_lastname"
+CATALOG = "workshop_firstname_lastname"
 
 SCHEMA_GOLD = "gold"
 
@@ -31,7 +31,7 @@ SCHEMA_GOLD = "gold"
 # MAGIC answers back.
 # MAGIC
 # MAGIC 1. Left sidebar → **Genie**
-# MAGIC 2. **New** → Give it a name like `Worley Gold — <yourname>`
+# MAGIC 2. **New** → Give it a name like `Mining Gold — <yourname>`
 # MAGIC 3. Add tables: `<your_catalog>.gold.daily_production_summary`,
 # MAGIC    `<your_catalog>.gold.equipment_risk_summary`,
 # MAGIC    `<your_catalog>.gold.site_production_targets`
@@ -51,7 +51,7 @@ SCHEMA_GOLD = "gold"
 # MAGIC ## Step 2: Build a Lakeview dashboard (UI walkthrough)
 # MAGIC
 # MAGIC 1. Left sidebar → **Dashboards** → **Create dashboard**
-# MAGIC 2. Name it `Worley Gold — <yourname>`
+# MAGIC 2. Name it `Mining Gold — <yourname>`
 # MAGIC 3. Add a dataset — paste this SQL:
 # MAGIC
 # MAGIC    ```sql

@@ -94,14 +94,6 @@
 # MAGIC - **Parallelism** — files are assigned to micro-batches and distributed across all
 # MAGIC   executors; no single-leader bottleneck
 # MAGIC
-# MAGIC ### Contrast — what you'd build yourself without it
-# MAGIC
-# MAGIC - Maintain your own "files processed" tracking table
-# MAGIC - Pay `LIST` costs on every run
-# MAGIC - Handle partial-batch failures
-# MAGIC - Detect schema drift manually
-# MAGIC - Race conditions when files land mid-read
-# MAGIC - Build the backfill path separately from the incremental path
 # MAGIC
 # MAGIC Each stream below uses `trigger(availableNow=True)` so it runs once, catches up all
 # MAGIC available files, and stops — perfect for a scheduled job.
@@ -116,7 +108,7 @@
 # COMMAND ----------
 
 # EDIT THIS — point to your own catalog
-CATALOG = "worley_firstname_lastname"
+CATALOG = "workshop_firstname_lastname"
 
 SCHEMA_BRONZE = "bronze"
 LANDING_VOLUME = "/Volumes/workshop_shared/landing/mining_sample"

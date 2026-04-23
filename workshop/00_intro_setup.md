@@ -1,4 +1,4 @@
-# Worley Data Engineering Workshop — Before You Start
+# Data Engineering Workshop — Before You Start
 
 Welcome! Before the hands-on modules, get these three things sorted.
 
@@ -7,10 +7,10 @@ Welcome! Before the hands-on modules, get these three things sorted.
 Your facilitator has already created a Unity Catalog just for you. It looks like:
 
 ```
-worley_<firstname>_<lastname>
+workshop_<firstname>_<lastname>
 ```
 
-For example: `worley_peter_parker`. Check the published attendee list the facilitator will share at the start (or ask them).
+For example: `workshop_peter_parker`. Check the published attendee list the facilitator will share at the start (or ask them).
 
 You are **owner** of your own catalog. You also have **read** access to every other attendee's catalog, so you can see what others are building.
 
@@ -20,14 +20,14 @@ Each notebook in this workshop opens with a single config cell like this:
 
 ```python
 # EDIT THIS — point to your own catalog
-CATALOG = "worley_firstname_lastname"
+CATALOG = "workshop_firstname_lastname"
 SCHEMA_BRONZE = "bronze"
 SCHEMA_SILVER = "silver"
 SCHEMA_GOLD   = "gold"
 LANDING_VOLUME = "/Volumes/workshop_shared/landing/mining_sample"
 ```
 
-**Replace `worley_firstname_lastname` with your own catalog name** at the top of every notebook. That's it — all the other cells reference these constants.
+**Replace `workshop_firstname_lastname` with your own catalog name** at the top of every notebook. That's it — all the other cells reference these constants.
 
 The `LANDING_VOLUME` path is the **shared hub** — 175M rows of synthetic mining production data that everyone reads from (and nobody writes to).
 

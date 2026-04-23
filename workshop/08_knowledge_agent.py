@@ -20,7 +20,7 @@
 # COMMAND ----------
 
 # EDIT THIS — point to your own catalog
-CATALOG = "worley_firstname_lastname"
+CATALOG = "workshop_firstname_lastname"
 
 # We'll put everything agent-related in its own schema
 SCHEMA_AGENT = "agent"
